@@ -1,0 +1,24 @@
+int arr_OrdenamientoLudmilaInt(int* array, int limite)
+{
+	int minimo = 0;
+	int aux = 0;
+	int retorno = -1;
+	for(int i  = 0; i<limite; i++)
+	{
+		minimo = i;
+		for(int j=i+1;j<limite;j++)
+		{
+			if(array[minimo]>array[j])
+			{
+				minimo = j;
+			}
+		}
+		if(array[i] > array[minimo])
+		{
+			aux = array[i];
+			array[i] = array[minimo];
+			array[minimo] = aux;
+		}
+	}
+	retorno = 0;
+	return retorno;
